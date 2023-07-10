@@ -7,7 +7,9 @@
 
 CC	=	gcc
 
-SRC	=	$(wildcard *.c)
+CPPFLAGS = -I./include/
+
+SRC	=	$(wildcard src/*.c)
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -16,9 +18,10 @@ NAME	=	my_ls
 RM	=	rm -f
 
 all:	$(NAME)
+	cd src
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(SRC)
+	gcc -o $(NAME) $(SRC) $(CPPFLAGS)
 
 clean:
 	$(RM) $(OBJ)
