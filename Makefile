@@ -7,7 +7,7 @@
 
 CC	=	gcc
 
-SRC	=	$(wildcard *.c)
+SRC	=	src/main.c	
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -16,6 +16,7 @@ NAME	=	my_ls
 RM	=	rm -f
 
 all:	$(NAME)
+	cd src
 
 $(NAME):	$(OBJ)
 	gcc -o $(NAME) $(SRC)
