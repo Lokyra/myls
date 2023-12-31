@@ -7,9 +7,7 @@
 
 CC	=	gcc
 
-CPPFLAGS = -I./include/
-
-SRC	=	$(wildcard src/*.c)
+SRC	=	src/main.c	
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -21,7 +19,7 @@ all:	$(NAME)
 	cd src
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(SRC) $(CPPFLAGS)
+	gcc -o $(NAME) $(SRC)
 
 clean:
 	$(RM) $(OBJ)
